@@ -1,14 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>EventsUnion | <%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js">
+    
+  </script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js">
+      
+  </script>
+    <script>
+      $(function(){$( "#accordion" ).accordion();});
+    </script>
+  <%= render 'layouts/shim' %>
+  <style type="text/css" media="screen">
+      #content {
+        float: none;
+        background-color: #d3d3d3;
+        margin-left: 100px;
+        border: 3px solid #aaa;
+        border-top: none;
+        padding: 25px;
+        width: 500px;
+      }
+      #content1 {
+        float: none;
+        background-color: #d3d3d3;
+        border: 3px solid #aaa;
+        margin-left: 30px;
+        padding: 15px;
+        width: 150px;
+      }
+      #content3 {
+        float: none;
+        background-color: #d3d3d3;
+        margin-left: 540px;
+        border: 3px solid #aaa;
+        padding: 15px;
+        width: 150px;
+      }
+      #content2 {
+        float: none;
+        margin-left: 270px;
+        margin-bottom: 0px;
+        background-color: #d3d3d3;
+        border: 3px solid #aaa;
+        padding: 15px;
+        width: 170px;
+      }
+      
+      #sidebar {
+        float: right;
+        width: 175px;
+      }
+      #sidebar ul {
+        margin-left: 0;
+        padding-left: 0;
+      }
+      #sidebar ul h3 {
+        margin-top: 25px;
+        font-size: 16px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      #sidebar li {
+        list-style-type: none;
+      }
+      #sidebar ul.links li {
+        margin-bottom: 5px;
+        
+      }
+      #page {
+        background-color: #a9a9a9;
+        width: 750px;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+      }
+  </style>
+  
 </head>
 <body>
-
+  <div class="container">
+  <%= render 'layouts/header' %>
 <%= yield %>
-
+  <%= render 'layouts/footer' %>
+  </div>
 </body>
 </html>
