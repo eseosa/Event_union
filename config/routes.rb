@@ -1,9 +1,9 @@
 EventsUnion::Application.routes.draw do
-  get "users/new"
+  resources :users
+  match "/signup", to: "users#new"
+  
   root to: "pages#home"
   match "/home", to: "pages#home"
-  match "/signup", to: "users#new"
-
   match "/aboutus", to: "pages#aboutus"
   match "/help", to: "pages#help"
   
